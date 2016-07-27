@@ -13,9 +13,9 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 
 
-app.use('/static', express.static(__dirname + 'static'));
+app.use('/static', express.static(__dirname + 'dist'));
 
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

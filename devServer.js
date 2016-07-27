@@ -11,13 +11,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }));
 
-app.use(require('webpack-hot-middleware')(compiler));
-
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(7770, 'localhost', function(err) {
+app.listen(process.env.PORT || 7770 , function(err) {
   if (err) {
     console.log(err);
     return;

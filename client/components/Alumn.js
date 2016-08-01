@@ -5,7 +5,13 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 const Alumn = React.createClass({
 	handleClick(e) {
 		e.preventDefault();
-		this.props.registerAlumn(this.props.alumn);
+		let number = 0;
+		this.props.fetchAlumni()
+		.then(() => this.props.alumni.forEach((alumn) =>  number += alumn.asistio ? 1 : 0))
+		.then(() => this.props.alumn.numero = number)
+		.then(() => this.props.registerAlumn(this.props.alumn))
+		.catch(() => console.log('error'));
+
 	},
 
 	render() {

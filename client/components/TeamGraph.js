@@ -26,8 +26,8 @@ const TeamGraph = React.createClass({
                            'CITNARANJA', 'EINARANJA', 'ENHNARANJA' , 'PITNARANJA']
         const { teamData } = this.props;
 
-        teamData.forEach((team) => teamNames.forEach((name, jindex) => {
-            data[jindex]+= parseInt(team[name]);
+        teamData.forEach((team) => teamNames.forEach((name, index) => {
+            data[index]+= parseInt(team[name]);
         }));
 
         return data;
@@ -39,16 +39,16 @@ const TeamGraph = React.createClass({
             datasets: [{
                 label: 'Puntos por Color',
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)'   
+                    'rgba(60, 24, 160, 1)',
+                    'rgba(177, 27, 27, 1)',
+                    'rgba(24, 160, 40, 1)',
+                    'rgba(230, 137, 15, 1)'   
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)'
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)'
                 ],
                 borderWidth: 1,
                 data: this.getScoresByColor()
@@ -60,55 +60,84 @@ const TeamGraph = React.createClass({
                      'CITROJO', 'EIROJO', 'ENHROJO', 'PITROJO', 
                      'CITVERDE', 'EIVERDE', 'ENHVERDE', 'PITVERDE',
                      'CITNARANJA', 'EINARANJA', 'ENHNARANJA' , 'PITNARANJA'],
+            fontColor: 'rgba(255,255,255,1)',
             datasets: [{
                 label: 'Puntos por Equipo',
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)', 
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)', 
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',    
+                    'rgba(60, 24, 160, 1)',
+                    'rgba(60, 24, 160, 1)',
+                    'rgba(60, 24, 160, 1)',
+                    'rgba(60, 24, 160, 1)',
+                    'rgba(177, 27, 27, 1)',
+                    'rgba(177, 27, 27, 1)',
+                    'rgba(177, 27, 27, 1)',
+                    'rgba(177, 27, 27, 1)',
+                    'rgba(24, 160, 40, 1)',
+                    'rgba(24, 160, 40, 1)',
+                    'rgba(24, 160, 40, 1)',
+                    'rgba(24, 160, 40, 1)',
+                    'rgba(230, 137, 15,1)',
+                    'rgba(230, 137, 15,1)',
+                    'rgba(230, 137, 15,1)',
+                    'rgba(230, 137, 15,1)'  
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)',
+                    'rgba(255, 255, 255, 1)'
                 ],
                 borderWidth: 1,
                 data: this.getScoresByTeam()
             }, ]
         };
 
+        const chartOptions = {
+            legend: {
+                        labels: {
+                            fontColor: 'rgba(255, 255, 255, 1)'
+                        }
+                    },
+            scales: {
+                xAxes:[{
+                    gridLines:{
+                      color:'rgba(255,255,255,1)',
+                      zeroLineColor:'rgba(255,255,255,1)',
+                    },
+                    ticks: {
+                        fontColor:'rgba(255,255,255,1)'
+                    }
+                  }],
+                yAxes:[{
+                    gridLines:{
+                      color:'rgba(255,255,255,0.5)',
+                      zeroLineColor:'rgba(255,255,255,1)'
+                    },
+                    ticks: {
+                        fontColor:'rgba(255,255,255,1)'
+                    }
+                  }]
+            }
+        };
+
 		return (
 			<div className="graph-container">
 			    <h1>Colores</h1>
-                <Bar data={dataByColor} width='600' height='200'/>
+                <Bar data={dataByColor} options= {chartOptions} width='500' height='150'/>
                 <h1>Equipos</h1>
-                <Bar data={dataByTeam} width='600' height='200'/>
+                <Bar data={dataByTeam} options= {chartOptions} width='500' height='150'/>
 			</div>
 		)
 	}

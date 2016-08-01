@@ -29,7 +29,13 @@ module.exports = {
       test: /\.styl$/, 
       include: path.join(__dirname, 'client'),
       loader: 'style-loader!css-loader!stylus-loader'
-    }
+    },
+    // Images
+    { test: /\.(png|jpg|svg)$/, 
+      loader: 'url-loader?limit=8192',
+      include: path.join(__dirname, 'client') 
+    } // inline base64 URLs for <=8k images, direct URLs for the rest
+
     ]
   }
 };

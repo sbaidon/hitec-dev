@@ -3,22 +3,52 @@
 @import '_animations.styl'
 
 body
-  background-image: linear-gradient(260deg, #2376ae 0%, #cffecf 100%);
+  background: linear-gradient(270deg, #009ce4, #d03232, #e1d853);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName { 
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
 
 .alumni-grid
   display flex
   flex-wrap wrap
-  max-width 1100px
+  max-width 900px
   margin 0 auto
 
 .search-container
   display flex
   flex-wrap wrap
-  justify-content center
-  align-content flex-start
+  justify-content space-around
+  align-content space-around
   max-width 600px
-  height 80vh
+  height 90vh
   margin 0 auto
+
+
+.hitec-logo
+  height 250px
+
+
+.hitec-blanco-logo
+  height 40px
+
 
 .search-form
   flex-basis 100%
@@ -45,78 +75,63 @@ body
   border 2px solid lightgray
   background white
   box-shadow 0 0 0 5px rgba(0,0,0,0.03);
-  margin-top 3rem
-  align-text center
 
 .navbar
-  display flex
-  justify-content space-around
-
-.single-question
-  @extend .grid-figure
-  max-width 900px
-  margin 0 auto
-  display flex
-  flex-flow row wrap
-  justify-content center
-  background white
-  border 1px solid goldenrod
-
-  .single-question__text
-    text-align center
-    box-shadow none
-    border 0
+  ul
+    list-style none
+    display flex
+    border 2px solid white
+    margin 0 
     padding 0
-    flex 1 0 100%
-  .options
-    flex 1 0 50%
-  .clock
-    flex 1 0 50%
-    text-align center
-    border 1px solid lightgray
-  .grid-photo
-    width 100%
-    margin 0
-  
+    background-color #0F406B
+    align-items center
+  li
+    flex 1
+    a
+      color #D88849
+      font-weight 100
+      letter-spacing 2px
+      text-decoration none
+      padding 20px 5px
+      font-family: 'Shanti', sans-serif;
+      font-size 2rem
+      line-height 1
+      display inline-block
+      width 100%
+      text-align center
+      transition all 0.5s
+      height 100%
+    .link:hover
+      background rgba(255,255,255,255)
 
-// Points
-.no-link
-  text-decoration none
-
-.answered
-  background #A86FCA
-
-.points
+.tec, .api
   text-align center
-  strong
-    color blue
-    margin-right 5px
- 
-.option-form
-  display flex 
-  border 2px solid
+  display flex
+  flex-wrap wrap
+  justify-content center
+  align-items center
+  align-content center
+  div
+    flex-basis 100%
+    text-align center
+  a
+    font-family: 'Shanti', sans-serif;
+    font-size 5rem
+    line-height 1
+    color #D88849
+    &:focus
+      outline 0
 
+.apple-logo
+  height 50px
   
-.likes-heart
-  background url(http://f.cl.ly/items/3Y373q2Q3J3Y1j203n0m/Bitmap-3.png) center no-repeat
-  background-size contain
-  font-size 2rem
-  padding 1rem
-  position absolute
-  color blue
-  left 50%
-  top 50%
-  pointer-events none
-  
+.android-logo
+  height 73px
 
 /*  
   Buttons  
 */
 
-.control-buttons
-  display flex
-  justify-content center
-    
 button, .button
   border 2px solid lighten(grey, 90%)
   background none
@@ -127,36 +142,12 @@ button, .button
   padding 5px
   text-align center
   font-size 15px
-  color blue
+  color black
   transition all 0.2s
   box-sizing padding-box
   &:hover, &:focus
     border-color blue
     outline 0
 
-/*
-  Cowboy style speech bubble - you should probably use an SVG for this if you are doing more icons.
-*/
-.speech-bubble
-  size = 1.25rem
-  width size * 1.2
-  height size 
-  background blue
-  display inline-block
-  border-radius 50%
-  position relative
-  &:after
-    display inline-block
-    position absolute
-    content ''
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 size size 0
-    border-color: transparent blue transparent transparent
-    top 30%
-    left 0
 
-  
-  
 

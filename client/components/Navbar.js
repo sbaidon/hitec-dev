@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
+import image from '../images/hitec-blanco.png';
+import tec from '../images/tec.jpg';
 
 const Navbar = React.createClass({
 	handleClick(e) {
@@ -10,19 +12,41 @@ const Navbar = React.createClass({
 
 	render() {
 		return (
-			<div className="navbar">
-				    <h1>
-				      <Link to="/">
-				        Registro
-				      </Link>
-				    </h1>
-
-				    <h1>
-				      <Link to="points">
+			<nav className="navbar">
+				<ul>
+				  <li>
+				  	<Link to="/">
+						<img src={image} className='hitec-blanco-logo'/>
+						</Link>
+					</li>
+					<li>
+					  <Link to="/" className="link">
+					    Registro
+					  </Link>
+					</li>
+				  <li>
+				    <Link to="points" className="link">
 				      Puntuacion
-				      </Link>
-				    </h1>
-			</div>
+				    </Link>
+				  </li>
+				  <li>
+				    	<Link to="api" className="link">
+				    	Apps
+				    	</Link>
+				   </li>
+
+				    <li>
+				    	<Link to="tec" className="link">
+				    	Tec Experience
+				    	</Link>
+				    </li>
+				    <li>
+				    <Link to="/">
+				    <img src={tec} className='hitec-blanco-logo' />
+				    </Link>
+				    </li>
+				   </ul>
+			</nav>
 		)
 	}
 });

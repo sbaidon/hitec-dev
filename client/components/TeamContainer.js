@@ -19,8 +19,8 @@ const TeamContainer = React.createClass({
     render() {
     return (
 			 <div>
-                <button onClick={this.handleClick}> Reload </button>
-                <TeamGraph teamData = {this.props.teams}/>
+                <button onClick={this.handleClick}>Cargar puntos</button>
+                <TeamGraph teamData = {this.props.teams} fetchTeams = {this.handleClick}/>
 			</div>
 		)
 	}

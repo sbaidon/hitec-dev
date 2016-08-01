@@ -109,11 +109,10 @@ export function registerAlumn(alumn) {
 	}
 }
 
-export function selectAlumn(alumn, numero) {
+export function selectAlumn(alumn) {
 	return {
 		type: 'SELECT_ALUMN',
-		alumn,
-		numero
+		alumn
 	}
 }
 

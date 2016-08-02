@@ -37,18 +37,9 @@ body
   flex-wrap wrap
   justify-content space-around
   align-content space-around
-  max-width 600px
+  max-width 500px
   height 90vh
   margin 0 auto
-
-
-.hitec-logo
-  height 250px
-
-
-.hitec-blanco-logo
-  height 40px
-
 
 .search-form
   flex-basis 100%
@@ -61,6 +52,43 @@ body
   button 
     width 100%
   height 10vh
+
+.navbar
+  ul
+    list-style none
+    display flex
+    border 2px solid white
+    margin 0 
+    padding 0
+    background-color #0F406B
+    align-items center
+  li
+    flex 1
+    a
+      font-weight 100
+      letter-spacing 2px
+      padding 20px 5px
+      font-size 2rem
+      line-height 1
+      display inline-block
+      width 100%
+      text-align center
+      transition all 0.5s
+      height 100%
+    .link:hover
+      background rgba(255,255,255,255)
+
+.hitec-logo
+  height 250px
+
+.hitec-blanco-logo
+  height 40px
+
+.apple-logo
+  height 50px
+  
+.android-logo
+  height 73px
 
 .graph-container
   display flex
@@ -76,34 +104,6 @@ body
   background white
   box-shadow 0 0 0 5px rgba(0,0,0,0.03);
 
-.navbar
-  ul
-    list-style none
-    display flex
-    border 2px solid white
-    margin 0 
-    padding 0
-    background-color #0F406B
-    align-items center
-  li
-    flex 1
-    a
-      color #D88849
-      font-weight 100
-      letter-spacing 2px
-      text-decoration none
-      padding 20px 5px
-      font-family: 'Shanti', sans-serif;
-      font-size 2rem
-      line-height 1
-      display inline-block
-      width 100%
-      text-align center
-      transition all 0.5s
-      height 100%
-    .link:hover
-      background rgba(255,255,255,255)
-
 .tec, .api
   text-align center
   display flex
@@ -115,18 +115,8 @@ body
     flex-basis 100%
     text-align center
   a
-    font-family: 'Shanti', sans-serif;
     font-size 5rem
     line-height 1
-    color #D88849
-    &:focus
-      outline 0
-
-.apple-logo
-  height 50px
-  
-.android-logo
-  height 73px
 
 /*  
   Buttons  
@@ -141,6 +131,7 @@ button, .button
   text-decoration none
   padding 5px
   text-align center
+  font-family: 'Shanti', sans-serif;
   font-size 15px
   color black
   transition all 0.2s

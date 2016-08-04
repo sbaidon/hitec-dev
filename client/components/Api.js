@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import Apple from '../images/appstore.svg';
 import Android from '../images/google-play-badge.png';
 
@@ -10,8 +9,13 @@ const Api = React.createClass({
 		return (
 			<div className="api">
 			  <div><h1>Apps</h1></div>
+			  <a>
 				<img className="apple-logo" src={Apple} />
-			  <img className="android-logo" src={Android} />
+				</a>
+				
+				<a href='https://drive.google.com/open?id=0B_vTMs3nA-1KNGhHSlZQQkRqTU0'>
+			    <img className="android-logo" src={Android} />
+			  </a>
 			</div>
 
 		)
